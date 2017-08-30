@@ -22,9 +22,9 @@ class DeepSARSAgent:
         self.discount_factor = 0.99
         self.learning_rate = 0.001
 
-        self.epsilon = 1.  # exploration
-        self.epsilon_decay = .9999
-        self.epsilon_min = 0.01
+        self.epsilon = 1.0
+        self.epsilon_min = 0.005
+        self.epsilon_decay = (self.epsilon - self.epsilon_min) / 50000
 
         self.batch_size = 64
         self.train_start = 1000
